@@ -25,7 +25,13 @@ export default function TRow(props) {
         <div className="tcel">{fechaNac}</div>
         <div className="tcel">{props.jug.Documento}</div>
         <Categoria fecha={props.jug.Nac} setCategoria={setCategoria} categoria={categoria} />
-        <div className="tcel">{props.jug.Socio}</div>
+
+        <div className="tcel">
+          {" "}
+          {props.jug.Socio}
+          {props.jug.Activo ? <span className="active">&#10687;</span> : <span className="inactive"> &#10687;</span>}
+        </div>
+
         {props.openPopUp === false ? (
           <div className="tcel d-flex align-items-center more justify-content-center">
             <MdKeyboardArrowDown />

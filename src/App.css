@@ -24,6 +24,7 @@ nav {
 }
 
 .logo-grande {
+  display: block;
   max-width: 15rem;
   margin-left: auto;
   margin-right: auto;
@@ -70,9 +71,6 @@ h3 {
   background-color: #fff6f7;
 }
 
-.trow:hover {
-  /* background-color: #e9e9e9; */
-}
 .thead {
   padding: 0.5rem;
   font-size: 1.25rem;
@@ -81,6 +79,10 @@ h3 {
 .tcel {
   text-align: left;
   font-size: 1.25rem;
+}
+
+.tcel > span {
+  margin-left: 0.3rem;
 }
 
 .tdetail {
@@ -138,6 +140,13 @@ h4 {
   color: #990418;
 }
 
+.active {
+  color: #5fcd10;
+}
+.inactive {
+  color: #a7a7a7;
+}
+
 footer {
   background-color: #cf142c;
   /* position: absolute;
@@ -191,4 +200,21 @@ legend {
   position: absolute;
   color: red;
   font-size: 0.8rem !important;
+}
+
+.buttons {
+  margin: 1rem 1.25rem !important;
+}
+
+.buttons > button {
+  margin-right: 1rem;
+}
+
+.btn-reset {
+  color: #cf142c !important;
+  /* border: none; */
+}
+.btn-reset:hover {
+  text-decoration: underline;
+  border: none !important;
 }

@@ -76,14 +76,14 @@ export default function AddPlayer() {
               </div>
 
               <div className="form-group">
-                <TextField label="Documento" name="Documento" type="number" />
+                <TextField label="Documento" name="Documento" type="tel" />
                 <TextField label="Nacionalidad" name="Nacionalidad" type="text" />
               </div>
 
               <TextField label="Fecha de Nacimiento" name="Nac" type="date" />
 
               <div className="form-group">
-                <TextField label="Telefono" name="Tel" type="number" />
+                <TextField label="Telefono" name="Tel" type="tel" />
                 <TextField label="Email" name="Email" type="email" />
               </div>
             </fieldset>
@@ -110,7 +110,7 @@ export default function AddPlayer() {
                 <TextField label="Apellido" name="Mad_apell" type="text" />
               </div>
               <div className="form-group">
-                <TextField label="Telefono" name="Mad_tel" type="number" />
+                <TextField label="Telefono" name="Mad_tel" type="tel" />
                 <TextField label="Email" name="Mad_email" type="email" />
               </div>
             </fieldset>
@@ -121,16 +121,18 @@ export default function AddPlayer() {
                 <TextField label="Apellido" name="Pad_apell" type="text" />
               </div>
               <div className="form-group">
-                <TextField label="Telefono" name="Pad_tel" type="number" />
+                <TextField label="Telefono" name="Pad_tel" type="tel" />
                 <TextField label="Email" name="Pad_email" type="email" />
               </div>
             </fieldset>
-            <button type="submit" className="btn btn-dark">
-              Agregar
-            </button>
-            <button type="reset" className="btn btn-danger">
-              Cancelar
-            </button>
+            <div className="buttons">
+              <button type="submit" className="btn btn-dark">
+                Agregar
+              </button>
+              <button type="reset" className="btn btn-reset">
+                Cancelar
+              </button>
+            </div>
           </Form>
         </div>
       )}

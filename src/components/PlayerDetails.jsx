@@ -63,32 +63,18 @@ export default function PlayerDetails(props) {
           <div className="my-row">
             <h4>Datos de la madre</h4>
             <p>
-              Nombre y Apellido:
-              <span className="data">
-                {props.jug.Mad_nom} {props.jug.Mad_apell}
-              </span>
+              {props.jug.Mad_nom} {props.jug.Mad_apell}
             </p>
-            <p>
-              Teléfono: <span className="data">{props.jug.Mad_tel}</span>
-            </p>
-            <p>
-              Email: <span className="data">{props.jug.Mad_email}</span>
-            </p>
+            <p>{props.jug.Mad_tel}</p>
+            <p>{props.jug.Mad_email}</p>
           </div>
           <div className="my-row">
             <h4>Datos del padre</h4>
             <p>
-              Nombre y Apellido:
-              <span className="data">
-                {props.jug.Pad_nom} {props.jug.Pad_apell}
-              </span>
+              {props.jug.Pad_nom} {props.jug.Pad_apell}
             </p>
-            <p>
-              Teléfono: <span className="data">{props.jug.Pad_tel}</span>
-            </p>
-            <p>
-              Email: <span className="data">{props.jug.Pad_email}</span>
-            </p>
+            <p>{props.jug.Pad_tel}</p>
+            <p>{props.jug.Pad_email}</p>
           </div>
         </div>
         <div className="group">

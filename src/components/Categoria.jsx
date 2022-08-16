@@ -2,23 +2,23 @@ export default function Categoria(props) {
   const date = new Date();
   const currentYear = date.getFullYear();
 
-  let cat;
+  const birthYear = parseFloat(props.fecha.substring(0, 4));
 
-  if (currentYear - props.birthYear === 7 || currentYear - props.birthYear === 8) {
-    cat = "Sub 8";
-  } else if (currentYear - props.birthYear === 9 || currentYear - props.birthYear === 10) {
-    cat = "Sub 10";
-  } else if (currentYear - props.birthYear === 11 || currentYear - props.birthYear === 12) {
-    cat = "Sub 12";
-  } else if (currentYear - props.birthYear === 13 || currentYear - props.birthYear === 14) {
-    cat = "Sub 14";
-  } else if (currentYear - props.birthYear === 15 || currentYear - props.birthYear === 16) {
-    cat = "Sub 16";
-  } else if (currentYear - props.birthYear === 17 || currentYear - props.birthYear === 18 || currentYear - props.birthYear === 19) {
-    cat = "Sub 19";
+  if (currentYear - birthYear === 7 || currentYear - birthYear === 8) {
+    props.setCategoria("Sub 8");
+  } else if (currentYear - birthYear === 9 || currentYear - birthYear === 10) {
+    props.setCategoria("Sub 10");
+  } else if (currentYear - birthYear === 11 || currentYear - birthYear === 12) {
+    props.setCategoria("Sub 12");
+  } else if (currentYear - birthYear === 13 || currentYear - birthYear === 14) {
+    props.setCategoria("Sub 14");
+  } else if (currentYear - birthYear === 15 || currentYear - birthYear === 16) {
+    props.setCategoria("Sub 16");
+  } else if (currentYear - birthYear === 17 || currentYear - birthYear === 18 || currentYear - birthYear === 19) {
+    props.setCategoria("Sub 19");
   } else {
-    cat = "Mayores";
+    props.setCategoria("Mayores");
   }
 
-  return <td>{cat}</td>;
+  return <div className="tcell">{props.categoria}</div>;
 }

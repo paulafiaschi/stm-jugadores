@@ -1,5 +1,6 @@
 import { BsFillPhoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
+import { HiIdentification } from "react-icons/hi";
 
 export default function PlayerDetails(props) {
   console.log(props);
@@ -7,44 +8,87 @@ export default function PlayerDetails(props) {
     <div className="tdetail">
       <div className="details">
         <div className="my-row">
-          <p className="d-flex align-items-center">
-            <BsFillPhoneFill /> 81997564
-          </p>
-          <p className="d-flex align-items-center">
-            <MdEmail /> patucampos@gmail.com
-          </p>
+          <h3>
+            {props.jug.Nombre} {props.jug.Apellido}
+          </h3>
+          <h4>
+            {props.categoria} - Socio n: {props.jug.Socio}
+          </h4>
+          <h5>{props.fechaNac}</h5>
+        </div>
+
+        <div className="my-row">
+          <h5 className="d-flex align-items-center">
+            <BsFillPhoneFill /> {props.jug.Tel}
+          </h5>
+          <h5 className="d-flex align-items-center">
+            <MdEmail /> {props.jug.Email}
+          </h5>
+          <h5 className="d-flex align-items-center">
+            <HiIdentification /> {props.jug.Documento}
+          </h5>
         </div>
 
         <div className="group">
           <div className="my-row">
             <p>
-              Nacionalidad: <span className="data">{props.jug.Nombre}</span>
+              Nacionalidad: <span className="data">{props.jug.Nacionalidad}</span>
             </p>
             <p>
-              Domicilio: <span className="data">{props.jug.Nombre}</span>
+              Domicilio: <span className="data">{props.jug.Domicilio}</span>
             </p>
-            <p>Comuna:</p>
-            <p>Ciudad:</p>
+            <p>
+              Comuna: <span className="data">{props.jug.Comuna}</span>
+            </p>
+            <p>
+              Ciudad: <span className="data">{props.jug.Ciudad}</span>
+            </p>
           </div>
           <div className="my-row">
-            <p>Colegio:</p>
-            <p>Seguro Médico:</p>
-            <p>Trasladar a:</p>
-            <p>Observaciones de Salud:</p>
+            <p>
+              Colegio: <span className="data">{props.jug.Colegio}</span>
+            </p>
+            <p>
+              Seguro Médico: <span className="data">{props.jug.Seguro}</span>
+            </p>
+            <p>
+              Trasladar a: <span className="data">{props.jug.Traslado}</span>
+            </p>
+            <p>
+              Observaciones de Salud: <span className="data">{props.jug.Obs}</span>
+            </p>
           </div>
         </div>
         <div className="group">
           <div className="my-row">
             <h4>Datos de la madre</h4>
-            <p>Nombre y Apellido</p>
-            <p>Teléfono:</p>
-            <p>Email:</p>
+            <p>
+              Nombre y Apellido:
+              <span className="data">
+                {props.jug.Mad_nom} {props.jug.Mad_apell}
+              </span>
+            </p>
+            <p>
+              Teléfono: <span className="data">{props.jug.Mad_tel}</span>
+            </p>
+            <p>
+              Email: <span className="data">{props.jug.Mad_email}</span>
+            </p>
           </div>
           <div className="my-row">
             <h4>Datos del padre</h4>
-            <p>Nombre y Apellido</p>
-            <p>Teléfono:</p>
-            <p>Email:</p>
+            <p>
+              Nombre y Apellido:
+              <span className="data">
+                {props.jug.Pad_nom} {props.jug.Pad_apell}
+              </span>
+            </p>
+            <p>
+              Teléfono: <span className="data">{props.jug.Pad_tel}</span>
+            </p>
+            <p>
+              Email: <span className="data">{props.jug.Pad_email}</span>
+            </p>
           </div>
         </div>
         <div className="group">

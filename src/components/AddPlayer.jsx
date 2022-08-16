@@ -50,7 +50,6 @@ export default function AddPlayer() {
   const validation = Yup.object().shape({
     Nombre: Yup.string().required("Required"),
     Apellido: Yup.string().required("Required"),
-    Documento: Yup.number().required("Required"),
     Email: Yup.string().email("Invalid email"),
     Tel: Yup.number().integer().typeError("Invalid phone"),
   });

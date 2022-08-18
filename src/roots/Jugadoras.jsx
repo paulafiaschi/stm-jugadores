@@ -1,4 +1,5 @@
 import { Link, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Table from "../components/Table";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
@@ -14,7 +15,8 @@ export default function Jugadoras(props) {
           + Agregar jugadora
         </Link>
       </button>
-      <Table jugadoras={props.jugadoras}></Table>
+
+      <Table {...props}></Table>
       <Footer />
     </>
   );

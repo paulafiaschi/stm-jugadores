@@ -3,24 +3,44 @@ import { useState } from "react";
 
 import TRow from "./TRow";
 
-export default function Table(props) {
-  // console.log(props.jugadoras);
+import THead from "./THead";
 
+export default function Table(props) {
   const [jugadora, setJugadora] = useState([]);
   const [openPopUp, setOpenPopUp] = useState(false);
+  const [list, setList] = useState([]);
+  console.log(props.jugadoras);
+
+  function filterList(filteredList) {
+    setList(filteredList);
+    console.log(filteredList);
+  }
+  console.log(list);
 
   return (
-    <div className="jugadorass">
-      <div className="thead">Nombre</div>
-      <div className="thead">Apellido</div>
-      <div className="thead">Fecha Nac</div>
-      <div className="thead">Documento</div>
-      <div className="thead">Categoria</div>
-      <div className="thead">Socio</div>
-      {props.jugadoras.length > 0 &&
-        props.jugadoras.map((jug) => {
-          return <TRow jugadora={jugadora} jug={jug} setOpenPopUp={setOpenPopUp} setJugadora={setJugadora} openPopUp={openPopUp} key={createUID(4)} />;
-        })}
-    </div>
+    <>
+      <button onClick={() => filterList(props.jugadoras)}>Todas</button>
+      <button onClick={() => filterList(props.mayores)}>Mayores</button>
+      <button onClick={() => filterList(props.sub19)}>Sub19</button>
+      <div className="jugadorass">
+        <THead />
+
+        {list.length !== 0
+          ? list.map((jug) => {
+              console.log("a");
+              return <TRow jugadora={jugadora} jug={jug} setOpenPopUp={setOpenPopUp} setJugadora={setJugadora} openPopUp={openPopUp} {...props} key={createUID(4)} />;
+            })
+          : props.jugadoras.length > 0 &&
+            props.jugadoras.map((jug) => {
+              console.log("b");
+
+              return (
+                <>
+                  <TRow jugadora={jugadora} jug={jug} setOpenPopUp={setOpenPopUp} setJugadora={setJugadora} openPopUp={openPopUp} {...props} key={createUID(4)} />
+                </>
+              );
+            })}
+      </div>
+    </>
   );
 }

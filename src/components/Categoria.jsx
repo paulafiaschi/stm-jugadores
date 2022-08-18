@@ -2,6 +2,10 @@ export default function Categoria(props) {
   const date = new Date();
   const currentYear = date.getFullYear();
 
+  // console.log(props.jug);
+  // console.log(props.mayores);
+  // console.log(props.jug.Categoria);
+
   const birthYear = parseFloat(props.fecha.substring(0, 4));
 
   if (currentYear - birthYear === 7 || currentYear - birthYear === 8) {
@@ -16,9 +20,10 @@ export default function Categoria(props) {
     props.setCategoria("Sub 16");
   } else if (currentYear - birthYear === 17 || currentYear - birthYear === 18 || currentYear - birthYear === 19) {
     props.setCategoria("Sub 19");
+    props.jug.Categoria = "Sub 19";
   } else {
     props.setCategoria("Mayores");
+    props.jug.Categoria = "Mayores";
+    !props.mayores.find((player) => player._id === props.jug._id) && props.setMayores((old) => old.concat(props.jug)) && console.log("added to Mayores");
   }
-
-  return <div className="tcell">{props.categoria}</div>;
 }

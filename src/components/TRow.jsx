@@ -44,7 +44,7 @@ export default function TRow(props) {
         )}
       </div>
 
-      {props.jugadora === props.jug && props.openPopUp && <PlayerDetails jug={props.jug} fechaNac={fechaNac} categoria={categoria} />}
+      {props.jugadora === props.jug && props.openPopUp && <PlayerDetails jug={props.jug} fechaNac={fechaNac} />}
     </div>
   );
 }

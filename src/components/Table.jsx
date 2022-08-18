@@ -9,7 +9,7 @@ export default function Table(props) {
   const [jugadora, setJugadora] = useState([]);
   const [openPopUp, setOpenPopUp] = useState(false);
   const [list, setList] = useState([]);
-  console.log(props.jugadoras);
+  console.log(props.mayores);
 
   function filterList(filteredList) {
     setList(filteredList);
@@ -19,9 +19,11 @@ export default function Table(props) {
 
   return (
     <>
-      <button onClick={() => filterList(props.jugadoras)}>Todas</button>
-      <button onClick={() => filterList(props.mayores)}>Mayores</button>
-      <button onClick={() => filterList(props.sub19)}>Sub19</button>
+      <div className="filters">
+        <button onClick={() => filterList(props.jugadoras)}>Todas</button>
+        <button onClick={() => filterList(props.mayores)}>Mayores</button>
+        <button onClick={() => filterList(props.sub19)}>Sub19</button>
+      </div>
       <div className="jugadorass">
         <THead />
 

@@ -43,18 +43,15 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         getCategories(data);
-        setJugadoras(data);
-        // console.log(data);
       });
   }, []);
 
   function getCategories(data) {
-    // console.log("getting cat");
     data.map((jug) => {
       const birthYear = parseFloat(jug.Nac.substring(0, 4));
       const date = new Date();
       const currentYear = date.getFullYear();
-      // console.log(birthYear);
+
       if (currentYear - birthYear === 7 || currentYear - birthYear === 8) {
         jug.Categoria = "Sub 18";
       } else if (currentYear - birthYear === 9 || currentYear - birthYear === 10) {
@@ -66,21 +63,19 @@ function App() {
       } else if (currentYear - birthYear === 15 || currentYear - birthYear === 16) {
         jug.Categoria = "Sub 16";
       } else if (currentYear - birthYear === 17 || currentYear - birthYear === 18 || currentYear - birthYear === 19) {
-        // props.setCategoria("Sub 19");
         jug.Categoria = "Sub 19";
         console.log("added to Sub 19");
         setSub19((old) => old.concat(jug));
+      } else if (mayores.find((item) => item._id === jug._id)) {
+        // console.log("the item is already in the basket");
       } else {
-        // props.setCategoria("Mayores");
+        setMayores((old) => [...old, { ...jug }]);
         jug.Categoria = "Mayores";
-        console.log("added to mayores");
-        setMayores((old) => old.concat(jug));
-        // console.log(jug.Categoria);
+        // console.log("added to mayores");
       }
     });
+    setJugadoras(data);
   }
-
-  // console.log(jugadoras);
 
   return (
     <Routes>

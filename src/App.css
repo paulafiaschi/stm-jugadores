@@ -217,3 +217,26 @@ legend {
   text-decoration: underline;
   border: none !important;
 }
+
+.filters {
+  margin-left: 1rem;
+}
+
+.filters button {
+  padding: 0.5rem 1rem;
+  background: none;
+  color: #cf142c;
+  border: none;
+  border-left: solid 1px #cf142c;
+  font-size: 1.15rem;
+}
+
+.filters button:first-child {
+  border: none;
+}
+
+.filters button:hover {
+  color: #616161;
+  border-color: #cf142c;
+  text-decoration: underline;
+}

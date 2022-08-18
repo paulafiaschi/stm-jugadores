@@ -12,7 +12,7 @@ export default function PlayerDetails(props) {
             {props.jug.Nombre} {props.jug.Apellido}
           </h3>
           <h4>
-            {props.categoria} - Socio n: {props.jug.Socio}
+            {props.jug.Categoria} - Socio n: {props.jug.Socio}
           </h4>
           <h5>{props.fechaNac}</h5>
         </div>

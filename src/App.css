@@ -220,6 +220,25 @@ form {
   margin-right: auto;
 }
 
+#edit {
+  max-width: 100%;
+}
+
+#edit input {
+  margin: 0 !important;
+  border: none;
+  border-bottom: solid 1px #616161;
+}
+
+#edit label {
+  margin: 0.2rem;
+}
+
+#edit .form-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .form-group {
   display: flex;
 }

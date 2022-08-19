@@ -50,7 +50,7 @@ function App() {
 
   function getCategories(data) {
     data.map((jug) => {
-      const birthYear = parseFloat(jug.Nac.substring(0, 4));
+      const birthYear = parseFloat(jug.Nac.substring(6, 10));
       const date = new Date();
       const currentYear = date.getFullYear();
 
@@ -66,14 +66,12 @@ function App() {
         jug.Categoria = "Sub 16";
       } else if (currentYear - birthYear === 17 || currentYear - birthYear === 18 || currentYear - birthYear === 19) {
         jug.Categoria = "Sub 19";
-        console.log("added to Sub 19");
+
         setSub19((old) => old.concat(jug));
       } else if (mayores.find((item) => item._id === jug._id)) {
-        // console.log("the item is already in the basket");
       } else {
         setMayores((old) => [...old, { ...jug }]);
         jug.Categoria = "Mayores";
-        // console.log("added to mayores");
       }
     });
     setJugadoras(data);

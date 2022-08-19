@@ -3,11 +3,11 @@ import Menu from "../components/Menu";
 import { Link, Routes, Route } from "react-router-dom";
 
 export default function Mayores(props) {
-  const firstPractice = new Date("August 18, 2022");
+  const today = new Date();
 
-  const day = firstPractice.getDate();
-  const month = firstPractice.getMonth() + 1;
-  console.log(day, month);
+  const day = today.getDay();
+  console.log(day, today);
+
   return (
     <>
       <Menu></Menu>

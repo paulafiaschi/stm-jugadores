@@ -5,10 +5,6 @@ import PlayerDetails from "./PlayerDetails";
 import Categoria from "./Categoria";
 
 export default function TRow(props) {
-  // console.log(props);
-  const fechaNac = `${props.jug.Nac.substring(8, 10)}/${props.jug.Nac.substring(5, 7)}/${props.jug.Nac.substring(0, 4)}`;
-  console.log(props.jug.Categoria);
-
   return (
     <div className="trow">
       <div
@@ -20,7 +16,7 @@ export default function TRow(props) {
       >
         <div className="tcel">{props.jug.Nombre}</div>
         <div className="tcel">{props.jug.Apellido}</div>
-        <div className="tcel">{fechaNac}</div>
+        <div className="tcel">{props.jug.Nac}</div>
         <div className="tcel">{props.jug.Documento}</div>
 
         <div className="tcell">{props.jug.Categoria}</div>
@@ -44,7 +40,7 @@ export default function TRow(props) {
         )}
       </div>
 
-      {props.jugadora === props.jug && props.openPopUp && <PlayerDetails jug={props.jug} fechaNac={fechaNac} />}
+      {props.jugadora === props.jug && props.openPopUp && <PlayerDetails jug={props.jug} />}
     </div>
   );
 }

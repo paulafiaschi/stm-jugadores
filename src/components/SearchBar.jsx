@@ -17,7 +17,7 @@ export default function SearchBar(props) {
 
   return (
     <div class="input-group my-search">
-      <input type="text" class="form-control" placeholder="Buscar jugadora..." aria-label="Jugadora" aria-describedby="basic-addon2" id="searchBar" ref={search} onChange={searchPlayers} />
+      <input type="text" className="form-control" placeholder="Buscar jugadora..." aria-label="Jugadora" aria-describedby="basic-addon2" id="searchBar" ref={search} onChange={searchPlayers} />
       <span class="input-group-text" id="basic-addon2">
         <AiOutlineSearch />
       </span>

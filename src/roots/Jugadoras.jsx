@@ -11,7 +11,7 @@ export default function Jugadoras(props) {
 
       <h1>Jugadoras</h1>
       <button className="btn-prim">
-        <Link className="nav-link" to="/agregar-jugadora">
+        <Link className="nav-link agregar" to="/agregar-jugadora">
           + Agregar jugadora
         </Link>
       </button>

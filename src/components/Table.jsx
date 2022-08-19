@@ -23,11 +23,13 @@ export default function Table(props) {
   return (
     <>
       <div className="filters">
-        <button onClick={() => filterList(props.jugadoras)}>Todas</button>
-        <button onClick={() => filterList(props.mayores)}>Mayores</button>
-        <button onClick={() => filterList(props.sub19)}>Sub19</button>
+        <div className="filter-buttons">
+          <button onClick={() => filterList(props.jugadoras)}>Todas</button>
+          <button onClick={() => filterList(props.mayores)}>Mayores</button>
+          <button onClick={() => filterList(props.sub19)}>Sub19</button>
+        </div>
+        <SearchBar searched={searched} setSearched={setSearched} jugadoras={props.jugadoras} />
       </div>
-      <SearchBar searched={searched} setSearched={setSearched} jugadoras={props.jugadoras} />
       <div className="jugadorass">
         <THead />
 

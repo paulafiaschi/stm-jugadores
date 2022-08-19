@@ -16,12 +16,21 @@ export default function SearchBar(props) {
   }
 
   return (
-    <div className="">
-      <label htmlFor="">Search</label>
-      <div className="">
-        <input type="text" id="searchBar" ref={search} onChange={searchPlayers} />
+    <div class="input-group my-search">
+      <input type="text" class="form-control" placeholder="Buscar jugadora..." aria-label="Jugadora" aria-describedby="basic-addon2" id="searchBar" ref={search} onChange={searchPlayers} />
+      <span class="input-group-text" id="basic-addon2">
         <AiOutlineSearch />
-      </div>
+      </span>
     </div>
   );
+}
+
+{
+  /* <div className="">
+  <label htmlFor="">Search</label>
+  <div className="">
+    <input type="text" id="searchBar" ref={search} onChange={searchPlayers} />
+    <AiOutlineSearch />
+  </div>
+</div> */
 }

@@ -109,6 +109,46 @@ h3 {
   margin: 0.25rem;
   text-align: left;
 }
+.filters {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.filters button {
+  padding: 0.5rem 1rem;
+  background: none;
+  color: #cf142c;
+  border: none;
+  border-left: solid 1px #cf142c;
+  font-size: 1.15rem;
+}
+
+.filters button:first-child {
+  border: none;
+}
+
+.filters button:hover {
+  color: #616161;
+  border-color: #cf142c;
+  text-decoration: underline;
+}
+
+.my-search {
+  width: 30vw !important;
+}
+
+.my-search span {
+  background-color: #cf142c;
+  color: white;
+  border-color: #cf142c;
+}
+
+#searchBar {
+  border: solid 1px #cf142c;
+}
 
 .group {
   display: grid;
@@ -217,29 +257,6 @@ legend {
 .btn-reset:hover {
   text-decoration: underline;
   border: none !important;
-}
-
-.filters {
-  margin-left: 1rem;
-}
-
-.filters button {
-  padding: 0.5rem 1rem;
-  background: none;
-  color: #cf142c;
-  border: none;
-  border-left: solid 1px #cf142c;
-  font-size: 1.15rem;
-}
-
-.filters button:first-child {
-  border: none;
-}
-
-.filters button:hover {
-  color: #616161;
-  border-color: #cf142c;
-  text-decoration: underline;
 }
 
 .success {

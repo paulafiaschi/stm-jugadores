@@ -203,6 +203,7 @@ legend {
 
 .buttons {
   margin: 1rem 1.25rem !important;
+  position: relative;
 }
 
 .buttons > button {
@@ -239,4 +240,23 @@ legend {
   color: #616161;
   border-color: #cf142c;
   text-decoration: underline;
+}
+
+.success {
+  position: fixed;
+  top: 9vh;
+  left: 0;
+  background-color: #caf5d5;
+  width: 100vw;
+  color: #22440b;
+  text-align: center;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success p {
+  margin: 0;
+  margin-left: 0.5rem;
 }

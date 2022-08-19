@@ -8,6 +8,8 @@ import { initializeApp } from "firebase/app";
 import Home from "./roots/Home";
 import Cargar from "./roots/Cargar";
 import Jugadoras from "./roots/Jugadoras";
+import Asistencia from "./roots/Asistencia";
+import Mayores from "./roots/Mayores";
 
 function App() {
   const firebaseConfig = {
@@ -82,6 +84,8 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/agregar-jugadora" element={<Cargar />} />
       <Route path="/jugadoras" element={<Jugadoras {...lists} />} />
+      <Route path="/asistencia" element={<Asistencia {...lists} />} />
+      <Route path="/asistencia/mayores" element={<Mayores {...lists} />} />
     </Routes>
   );
 }

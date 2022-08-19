@@ -33,6 +33,11 @@ export default function Menu() {
                     Agregar jugadora
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/asistencia">
+                    Asistencia
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

@@ -1,12 +1,15 @@
 import { Formik, Form } from "formik";
 import createUID from "create-unique-id";
-import TextField from "./TextField";
+import { useState, useEffect } from "react";
 import * as Yup from "yup";
+import { BsCheckCircleFill } from "react-icons/bs";
+
+import TextField from "./TextField";
 
 export default function AddPlayer() {
-  function handleSubmit(values) {
-    console.log(values);
+  const [submitted, setSubmitted] = useState(false);
 
+  function handleSubmit(values) {
     const postData = JSON.stringify(values);
     fetch(`https://cocktails-240e.restdb.io/rest/jugadoras`, {
       method: "post",
@@ -18,7 +21,10 @@ export default function AddPlayer() {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
-    console.log("values,", values);
+  }
+
+  function closeMessage() {
+    setSubmitted(false);
   }
 
   const initial_form_state = {
@@ -50,24 +56,30 @@ export default function AddPlayer() {
   const validation = Yup.object().shape({
     Nombre: Yup.string().required("Required"),
     Apellido: Yup.string().required("Required"),
-    Email: Yup.string().email("Invalid email"),
-    Tel: Yup.number().integer().typeError("Invalid phone"),
+    // Email: Yup.string().email("Invalid email"),
+    // Tel: Yup.number().integer().typeError("Invalid phone"),
   });
   return (
     <Formik
       initialValues={{ ...initial_form_state }}
       validationSchema={validation}
-      onSubmit={(values) => {
+      onSubmit={(values, { resetForm }) => {
+        console.log("set submitted to true");
+        setSubmitted(true);
+        setTimeout(closeMessage, 1000);
+
         handleSubmit(values);
-        // console.log(values);
+
+        resetForm({ values: "" });
+        console.log("form resetted");
       }}
     >
       {(formik) => (
-        <div>
+        <>
           <h1>Cargar jugadora</h1>
-          {/* {console.log(formik.values)} */}
+          {/* {console.log(formik)} */}
 
-          <Form>
+          <form onSubmit={formik.handleSubmit}>
             <fieldset>
               <legend>Información personal</legend>
               <div className="form-group">
@@ -133,8 +145,17 @@ export default function AddPlayer() {
                 Cancelar
               </button>
             </div>
-          </Form>
-        </div>
+          </form>
+
+          <div className={`${submitted ? "success" : "d-none"}`}>
+            <BsCheckCircleFill />
+            <p>Player successfully added</p>
+          </div>
+          {/* <div className="success">
+            <BsCheckCircleFill />
+            <p>Player successfully added</p>
+          </div> */}
+        </>
       )}
     </Formik>
   );

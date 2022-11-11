@@ -27,11 +27,21 @@ function App() {
   const [jugadoras, setJugadoras] = useState([]);
   const [mayores, setMayores] = useState([]);
   const [sub19, setSub19] = useState([]);
+  const [sub16, setSub16] = useState([]);
+  const [sub14, setSub14] = useState([]);
+  const [sub12, setSub12] = useState([]);
+  const [sub10, setSub10] = useState([]);
+  const [sub8, setSub8] = useState([]);
 
   const lists = {
     jugadoras,
     mayores,
     sub19,
+    sub16,
+    sub14,
+    sub12,
+    sub10,
+    sub8,
   };
 
   const options = {
@@ -55,15 +65,20 @@ function App() {
       const currentYear = date.getFullYear();
 
       if (currentYear - birthYear === 7 || currentYear - birthYear === 8) {
-        jug.Categoria = "Sub 18";
+        jug.Categoria = "Sub 8";
+        setSub8((old) => old.concat(jug));
       } else if (currentYear - birthYear === 9 || currentYear - birthYear === 10) {
         jug.Categoria = "Sub 10";
+        setSub10((old) => old.concat(jug));
       } else if (currentYear - birthYear === 11 || currentYear - birthYear === 12) {
         jug.Categoria = "Sub 12";
+        setSub12((old) => old.concat(jug));
       } else if (currentYear - birthYear === 13 || currentYear - birthYear === 14) {
         jug.Categoria = "Sub 14";
+        setSub14((old) => old.concat(jug));
       } else if (currentYear - birthYear === 15 || currentYear - birthYear === 16) {
         jug.Categoria = "Sub 16";
+        setSub16((old) => old.concat(jug));
       } else if (currentYear - birthYear === 17 || currentYear - birthYear === 18 || currentYear - birthYear === 19) {
         jug.Categoria = "Sub 19";
 

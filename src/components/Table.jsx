@@ -11,7 +11,8 @@ export default function Table(props) {
   const [list, setList] = useState([]);
   const [searched, setSearched] = useState("");
 
-  console.log(props.mayores);
+  // console.log(props.mayores);
+  console.log(props.jugadoras);
 
   function filterList(filteredList) {
     setList(filteredList);
@@ -27,8 +28,13 @@ export default function Table(props) {
           <button onClick={() => filterList(props.jugadoras)}>Todas</button>
           <button onClick={() => filterList(props.mayores)}>Mayores</button>
           <button onClick={() => filterList(props.sub19)}>Sub19</button>
+          <button onClick={() => filterList(props.sub16)}>Sub16</button>
+          <button onClick={() => filterList(props.sub14)}>Sub14</button>
+          <button onClick={() => filterList(props.sub12)}>Sub12</button>
+          <button onClick={() => filterList(props.sub10)}>Sub10</button>
+          <button onClick={() => filterList(props.sub8)}>Sub8</button>
         </div>
-        <SearchBar searched={searched} setSearched={setSearched} jugadoras={props.jugadoras} />
+        <SearchBar searched={searched} setSearched={setSearched} jugadoras={list} />
       </div>
       <div className="jugadorass">
         <THead />
